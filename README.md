@@ -9,3 +9,15 @@ What is the difference between a parameter and an argument?
 
 - **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
 
+## Exercise 6.5
+
+Write a function to return the absolute value of its argument.
+
+```cpp
+template <typename T>
+T abs(T i)
+{
+    return i >= 0 ? i : -i;
+}
+```
+
