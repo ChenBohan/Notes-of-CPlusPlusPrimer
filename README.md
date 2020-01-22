@@ -30,3 +30,16 @@ Explain the differences between a parameter, a local variable, and a local stati
 - **parameter**: Local variables declared inside the function parameter list
 
 - **local static variable**: local static variable（object）is initialized before the first time execution passes through the object’s definition. Local statics are not destroyed when a function ends, they are destroyed when the program terminates.
+
+## Exercise 6.7
+
+Write a function that returns 0 when it is first called and then generates numbers in sequence each time it is called again.
+
+```cpp
+size_t generate()
+{
+    static size_t n = 0;
+    return n++;
+}
+```
+
