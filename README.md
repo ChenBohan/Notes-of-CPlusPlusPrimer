@@ -43,3 +43,15 @@ size_t generate()
 }
 ```
 
+## Exercise 6.10
+
+Using pointers, write a function to swap the values of two int s. Test the function by calling it and printing the swapped values.
+```cpp
+void swap(int *a, int *b)
+{
+    auto tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+```
+
