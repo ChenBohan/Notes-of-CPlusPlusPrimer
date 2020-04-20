@@ -119,4 +119,27 @@ see more discusses at http://stackoverflow.com/questions/26530659/confused-about
 
 when you can find the preexisted object that the reference refered.
 
+### Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten string s, without using either a trailing return, decltype, or a type alias.
 
+```cpp
+// Declaring a Function That Returns a Pointer to an Array
+string (&func(string (&arrStr)[10]))[10]
+```
+
+### Exercise 6.37: Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing return, and the third should use decltype.
+
+```cpp
+using ArrT = string[10];
+ArrT& func1(ArrT& arr);
+
+// Using a Trailing Return Type
+auto func2(ArrT& arr) -> string(&)[10];
+
+// Using decltype
+string arrS[10];
+decltype(arrS)& func3(ArrT& arr);
+```
+
+```
+The only tricky part is that we must remember that decltype does not automatically convert an array to its corresponding pointer type. The type returned by decltype is an array type, to which we must add a * to indicate that arrPtr returns a pointer.
+```
