@@ -1,7 +1,7 @@
 # CppPrimer-06-Functions
 Solutions for Chapter 6. Functions exercises of C++ Primer 5th.
 
-## Exercise 6.1
+### Exercise 6.1
 
 What is the difference between a parameter and an argument?
 
@@ -9,7 +9,7 @@ What is the difference between a parameter and an argument?
 
 - **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
 
-## Exercise 6.5
+### Exercise 6.5
 
 Write a function to return the absolute value of its argument.
 
@@ -21,7 +21,7 @@ T abs(T i)
 }
 ```
 
-## Exercise 6.6
+### Exercise 6.6
 
 Explain the differences between a parameter, a local variable, and a local static variable. 
 
@@ -31,7 +31,7 @@ Explain the differences between a parameter, a local variable, and a local stati
 
 - **local static variable**: local static variable（object）is initialized before the first time execution passes through the object’s definition. Local statics are not destroyed when a function ends, they are destroyed when the program terminates.
 
-## Exercise 6.7
+### Exercise 6.7
 
 Write a function that returns 0 when it is first called and then generates numbers in sequence each time it is called again.
 
@@ -43,7 +43,7 @@ size_t generate()
 }
 ```
 
-## Exercise 6.10
+### Exercise 6.10
 
 Using pointers, write a function to swap the values of two int s. Test the function by calling it and printing the swapped values.
 ```cpp
@@ -55,7 +55,7 @@ void swap(int *a, int *b)
 }
 ```
 
-## Exercise 6.23
+### Exercise 6.23
 
 Write your own versions of each of the print functions presented in this section. Call each of these functions to print i and j defined as follows: int i = 0, j[2] = {0, 1};
 
@@ -104,7 +104,7 @@ void print(const int (&arr)[2]) {
 }
 ```
 
-## Exercise 6.24
+### Exercise 6.24
 
 ```
 Arrays have two special properties that affect how we define and use functions that operate on arrays: We cannot copy an array, and when we use an array it is (usually) converted to a pointer.
@@ -118,3 +118,11 @@ In this question, const int ia[10] is actually same as const int*, and the size 
 void print10(const int (&ia)[10]) { /*...*/ }
 ```
 see more discusses at http://stackoverflow.com/questions/26530659/confused-about-array-parameters
+
+### Exercise 6.29
+
+When you use an `initializer_list` in a range `for` would you ever use a reference as the loop control variable? I f so, why? If not, why not ?
+
+- Depends on the type of elements of initializer_list. 
+    - When the type is PODType, reference is unnecessary. Because POD is cheap to copy(such as int).
+    - Otherwise, Using reference(const) is the better choice.
