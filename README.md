@@ -143,3 +143,11 @@ decltype(arrS)& func3(ArrT& arr);
 ```
 The only tricky part is that we must remember that decltype does not automatically convert an array to its corresponding pointer type. The type returned by decltype is an array type, to which we must add a * to indicate that arrPtr returns a pointer.
 ```
+
+### Exercise 6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+
+```cpp
+inline bool isShorter(const string &s1, const string &s2) {
+    return s1.size() < s2.size();
+}
+```
