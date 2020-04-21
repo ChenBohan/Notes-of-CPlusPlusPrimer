@@ -140,9 +140,8 @@ string arrS[10];
 decltype(arrS)& func3(ArrT& arr);
 ```
 
-```
-The only tricky part is that we must remember that decltype does not automatically convert an array to its corresponding pointer type. The type returned by decltype is an array type, to which we must add a * to indicate that arrPtr returns a pointer.
-```
+> The only tricky part is that we must remember that decltype does not automatically convert an array to its corresponding pointer type. The type returned by decltype is an array type, to which we must add a * to indicate that arrPtr returns a pointer.
+
 
 ### Exercise 6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
 
@@ -151,3 +150,12 @@ inline bool isShorter(const string &s1, const string &s2) {
     return s1.size() < s2.size();
 }
 ```
+
+### Exercise 6.46: Would it be possible to define isShorter as a constexpr? If so, do so. I f not, explain why not.
+
+No, std::string(parameter of isShorter) is not a literal type.
+
+> A constexpr function is defined like any other function but must meet certain restrictions: The return type and the type of each parameter in a must be a literal type
+
+
+
